@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.cursor-dot {
+  position: fixed; /* Sayfada sabitlenmiş */
+  width: 10px; /* Noktanın genişliği */
+  height: 10px; /* Noktanın yüksekliği */
+  background-color: #3fdf77; /* Noktanın rengi */
+  border-radius: 50%; /* Yuvarlak şekil */
+  transform: translate(-50%, -50%); /* Noktayı merkezlemek için */
+  transition: top 0.1s ease, left 0.1s ease; /* Yumuşak hareket */
+  pointer-events: none; /* Noktayı tıklanamaz hale getirir */
+}
+
+.image-container {
+  img {
+    position: absolute;
+    animation: blink 3s infinite;
+    opacity: 0.1;
+  }
+}
+
+.blinking-img1 {
+  left: 300px;
+  top: 100px;
+}
+.blinking-img2 {
+  right: 200px;
+  top: 400px;
+}
+.blinking-img3 {
+  left: 400px;
+  top: 500px;
+}
+.blinking-img4 {
+  left: 700px;
+  top: 300px;
+}
+@keyframes blink {
+  0% {
+    opacity: 0; /* Tam görünürlük */
+  }
+  25% {
+    opacity: 0.1; /* Yavaşça kaybolmaya başlar */
+  }
+  50% {
+    opacity: 0; /* Tamamen kaybolur */
+  }
+  75% {
+    opacity: 0.1; /* Yavaşça tekrar görünür olur */
+  }
+  100% {
+    opacity: 0; /* Tam görünür hale gelir */
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(../image/slider_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar {
+  margin-top: 30px;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.line {
+  width: 50px;
+  height: 1.2px;
+  background-color: #45f882;
+  position: absolute;
+  left: 10%;
+  top: 8px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.line-home {
+  width: 50px;
+  height: 1.2px;
+  transform: rotate(-45deg);
+  background-color: #45f882;
+  position: absolute;
+  top: 8px;
+}
+.navbar .menu {
+  display: flex;
+  gap: 50px;
+  position: relative;
+}
+
+.navbar .menu .menu-item {
+  position: relative;
+  &:hover {
+    .line {
+      transform: rotate(-45deg);
+
+      opacity: 1;
+    }
+  }
+}
+
+.navbar .menu a {
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.navbar .menu a:hover {
+  color: #45f882;
+}
+
+.navbar .menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar .menu .menu-item:hover .submenu {
+  display: flex;
+}
+
+.navbar .search-icon {
+  font-size: 20px;
+  transition: 0.3s;
+  &:hover {
+    color: #45f882;
+  }
+}
+
+.sign-in {
+  position: relative;
+  &:hover {
+    svg {
+      fill: #45f882;
+    }
+    h1,
+    i {
+      color: #000;
+    }
+  }
+  svg {
+    width: 130px;
+    color: #45f882;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  h1 {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 15px;
+    top: -2px;
+    left: 0px;
+    transition: 0.5s;
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column; /* Çubukları dikey hizalar */
+  gap: 5px; /* Çubuklar arasında boşluk */
+  cursor: pointer; /* İmleç şekli */
+}
+
+.hamburger span {
+  background-color: rgb(237, 223, 223); /* Çubuk rengi */
+  height: 4px; /* Çubuk kalınlığı */
+  transition: 1s;
+}
+
+.span-one {
+  width: 20px; /* İlk çubuk soldan sağa 20px görünür */
+}
+
+.span-two {
+  width: 37px; /* İkinci çubuk tam görünür */
+}
+
+.span-three {
+  width: 20px; /* Üçüncü çubuk sağdan sola 20px gizlenir */
+}
+
+.hamburger:hover .span-one {
+  width: 37px; /* Hover ile tam görünür */
+}
+
+.hamburger:hover .span-two {
+  width: 37px; /* İkinci çubuk sabit kalır */
+}
+
+.hamburger:hover .span-three {
+  width: 37px; /* Hover ile tam görünür */
+}
+
+@media (max-width: 768px) {
+  /* Mobil uyumluluk */
+  .navbar .menu {
+    display: none;
+    /* Menüyü gizler */
+  }
+  .navbar .hamburger {
+    display: flex;
+    /* Hamburger menüsünü gösterir */
+  }
+}
+.live-gaming {
+  width: 100%;
+  height: 100vh;
+  .container {
+    display: flex;
+    padding: 0 0 0 50px;
+
+    .left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .game {
+        display: flex;
+        align-items:start;
+        justify-content: flex-start;
+        width: 210px;
+        height: 50px;
+        background: linear-gradient(to right, #1f5c40a5, #1320265a);
+        border-radius: 10px;
+        margin: 90px  0  30px 0;
+        h2 {
+          font-family: Poppins, sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: 4px;
+          line-height: 20px;
+          text-decoration: none solid rgb(69, 248, 130);
+          text-align: left;
+          text-transform: uppercase;
+          background-position: 0% 0%;
+          color: #45f882;
+          height: 54px;
+          width: 694px;
+          padding: 17px 0 17px 20px;
+          transform: none;
+          transition: all 0s ease 0s;
+          box-sizing: border-box;
+          word-wrap: break-word;
+        }
+      }
+
+      .live {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 30px;
+
+        .images{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            transition: 0.3s;
+
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+        h1 {
+          font-family: berlin_sans_fb_demibold;
+          font-size: 150px;
+          font-weight: 700;
+          line-height: 120px;
+          text-decoration: none solid rgb(255, 255, 255);
+          text-align: left;
+          text-transform: uppercase;
+          /* background-color: #ffffff; */
+          background-position: 0% 0%;
+          color: #ffffff;
+          height: 240px;
+          width: 794px;
+          margin: 0 0 21px 0;
+          transform: none;
+          transition: all 0s ease 0s;
+          box-sizing: border-box;
+          text-shadow: rgba(69, 248, 130, 0.66) -1px 5px 0px;
+          word-wrap: break-word;
+        }
+
+        p {
+          font-size: 30px;
+          font-family: Poppins, sans-serif;
+          font-weight: 700;
+          letter-spacing: 5px;
+          line-height: 36.4px;
+          text-decoration: none solid rgb(255, 255, 255);
+          text-align: left;
+          text-transform: uppercase;
+          background-position: 0% 0%;
+          color: #ffffff;
+          height: 36.4px;
+          width: 694px;
+          transform: none;
+          transition: all 0s ease 0s;
+          outline: rgb(255, 0, 0) dahed 0.8px;
+          box-sizing: border-box;
+          word-wrap: break-word;
+        }
+      }
+
+      .contact-us {
+        position: relative;
+
+      
+        svg {
+          color: #ffffff;
+          height: auto;
+          width: 160px;
+          cursor: pointer;
+          fill: #45f882;
+          transition: 0.4s;
+          &:hover{
+           fill: #ffffff;
+          }
+        }
+        h3 {
+          font-family: Barlow, sans-serif;
+          font-size: 13px;
+          font-weight: bold;
+          letter-spacing: 0.8px;
+          line-height: 26.25px;
+          text-decoration: none solid rgb(32, 31, 42);
+          text-align: center;
+          text-transform: uppercase;
+          height: 26.25px;
+          min-height: auto;
+          min-width: auto;
+          cursor: pointer;
+          transform: none;
+          transition: all 0s ease 0s;
+          box-sizing: border-box;
+          word-wrap: break-word;
+          position: absolute;
+          top: 11px;
+          left: 30px;
+
+        }
+      }
+    }
+
+    .right{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            width: 450px;
+            margin-top: 50px;
+        }
+    }
+
+    .ucbucaq{
+        clip-path: polygon(0 87%, 0% 100%, 100% 100%);
+        background-color: #45f882;
+    }
+
+  }
+}
+.ikinci{
+    width: 100%;
+    height: 100vh;
+margin-top: 100px;
+    .container{
+        height: 100%;
+
+    }
+}
