@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Navigation Bar</title>
     <link rel="stylesheet" href="./src/css/style.css" />
     <link
@@ -715,7 +716,9 @@
        
       </div>
     </section>
-
+    <button class="top-button" id="toTopBtn"><i class="fa-solid fa-circle-chevron-up"></i></button>
+      
+  </div>
     <footer>
       <div class="container">
         <div class="ACTIVE">
@@ -771,6 +774,23 @@
           </div>
         </div>
     </footer>
+    <script>
+      const toTopBtn = document.getElementById("toTopBtn");
+
+      // Sayfa kaydırıldığında düğmeyi görünür kılmak için
+      window.onscroll = function() {
+          if (window.pageYOffset > 200) { // Sayfa 200 piksel kaydırıldığında düğmeyi göster
+              toTopBtn.style.display = "block";
+          } else {
+              toTopBtn.style.display = "none"; // Aksi takdirde gizle
+          }
+      };
+
+      // Düğmeye tıklandığında sayfanın en üstüne gitmek için
+      toTopBtn.onclick = function() {
+          window.scrollTo({ top: 0, behavior: "smooth" }); // Yumuşak kaydırma efekti
+      };
+  </script>
     <script>
       const slider = document.getElementById('slider');
       const prev = document.getElementById('prev');

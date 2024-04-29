@@ -1475,7 +1475,7 @@ body {
             h3 {
               color: #adb0bc;
 
-              span.i {
+              span,i {
                 color: orange;
               }
             }
@@ -1497,6 +1497,30 @@ body {
       }
     }
   }
+}
+
+.top-button {
+  position: fixed; /* Düğmeyi ekranın sabit bir konumunda tutar */
+  bottom: 20px; /* Düğmeyi ekranın altından biraz yukarıda yerleştirir */
+  right: 20px; /* Düğmeyi ekranın sağından biraz içeride yerleştirir */
+  padding: 10px;
+  background-color: #3fdf77; /* Düğmenin arka plan rengi */
+  color: #fff; /* Düğmenin yazı rengi */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Fare imlecini el simgesine çevirir */
+  display: none; /* Düğme başlangıçta görünmez */
+transition: 0.5s;
+  i{
+    font-size: 30px;
+    transition: 0.5s;
+  color: #000;
+  }
+}
+
+/* Düğme üzerine gelindiğinde farklı bir stil uygular */
+.top-button:hover {
+  background-color: orange; /* Düğme üzerine gelindiğinde arka plan rengini değiştirir */
 }
 
 footer {
@@ -1595,6 +1619,19 @@ footer {
         }
       }
     }
+    @media (min-width: 768px) and (max-width: 1023px) {
+     
+      nav{
+        width: 100%;
+        display: none;
+      
+          
+        
+
+      }
+    
+  }
+
 
     .NEWSLETTER {
       gap: 50px;
@@ -1649,3 +1686,13 @@ footer {
     }
   }
 }
+
+
+
+
+
+/* Tablet modunda */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
