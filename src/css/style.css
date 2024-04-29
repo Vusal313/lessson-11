@@ -1475,7 +1475,8 @@ body {
             h3 {
               color: #adb0bc;
 
-              span,i {
+              span,
+              i {
                 color: orange;
               }
             }
@@ -1510,11 +1511,11 @@ body {
   border-radius: 5px;
   cursor: pointer; /* Fare imlecini el simgesine çevirir */
   display: none; /* Düğme başlangıçta görünmez */
-transition: 0.5s;
-  i{
+  transition: 0.5s;
+  i {
     font-size: 30px;
     transition: 0.5s;
-  color: #000;
+    color: #000;
   }
 }
 
@@ -1614,85 +1615,240 @@ footer {
         width: 120.7px;
         color: #adb0bc;
         transition: 0.5s;
-        &:hover{
+        &:hover {
           color: var(--primary-color);
         }
       }
     }
-    @media (min-width: 768px) and (max-width: 1023px) {
-     
-      nav{
-        width: 100%;
-        display: none;
-      
-          
-        
-
-      }
-    
   }
 
-
-    .NEWSLETTER {
-      gap: 50px;
-      p{
-        color: #adb0bc;
-      }
-
-      .search{
-        display: flex;
-        align-items: center;
-
-        input{
-          padding:16px 30px;
-          border-radius: 5px;
-          background-color: #1b242e;
-          outline: none;
-
-        }
-        i{
-          font-size: 30px;
-          padding: 10px;
-          background-color: #3fdf77;
-          border-radius: 5px;
-          transition: 0.5s;
-
-          &:hover{
-           background-color:  orange;
-          }
-        }
-      }
-    }
-  }
-  .credi-bottom{
-    width:100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 30px;
-    gap: 250px;
-    background: #000;
-
-    p{
+  .NEWSLETTER {
+    gap: 50px;
+    p {
       color: #adb0bc;
-      margin-right: 30px;
-      span{
-        color: #3fdf77;
-      }
     }
-    img{
-      margin-right: 30px;
+
+    .search {
+      display: flex;
+      align-items: center;
+
+      input {
+        padding: 16px 30px;
+        border-radius: 5px;
+        background-color: #1b242e;
+        outline: none;
+      }
+      i {
+        font-size: 30px;
+        padding: 10px;
+        background-color: #3fdf77;
+        border-radius: 5px;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: orange;
+        }
+      }
     }
   }
 }
+.credi-bottom {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  gap: 250px;
+  background: #000;
 
-
-
-
-
-/* Tablet modunda */
-@media (min-width: 768px) and (max-width: 1023px) {
-
+  p {
+    color: #adb0bc;
+    margin-right: 30px;
+    span {
+      color: #3fdf77;
+    }
+  }
+  img {
+    margin-right: 30px;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    overflow: hidden;
+  }
+  nav {
+    width: 100%;
+
+    .container {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  .menu {
+    visibility: hidden;
+  }
+
+  .live-gaming {
+    width: 100%;
+    background-size: 100% 100%;
+    background-size: cover;
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: star;
+      justify-content: start;
+
+      .left {
+        margin-right: 200px;
+      }
+    }
+  }
+
+  .iPRINCESS {
+    width: 100%;
+
+    .container {
+      .cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        .card {
+          width: 48%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .STEAMERS {
+    width: 100%;
+    background-size: 100% 100%;
+    background-size: cover;
+    .container {
+      overflow: hidden;
+    }
+
+    .line-gradient {
+      width: 700px;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      width: 700px;
+      margin: 0;
+      padding: 0;
+    }
+    .HUMAN-GAME {
+      width: 100%;
+      margin: 0 0;
+      left: wi 40%;
+
+      .right {
+        width: 55%;
+        .top {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .bottom {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          width: 45%;
+        }
+      }
+    }
+  }
+
+  .ACTIVE-TEAM-MEMBERS {
+    width: 100%;
+    height: 100%;
+    .cardss {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      .cardd {
+        width: 50%;
+      }
+    }
+  }
+
+  .ROADMAPS {
+    width: 100%;
+    background-size: 100% 100%;
+    background-size: cover;
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left {
+      width: 100%;
+    }
+    .center {
+      display: none;
+    }
+    .right {
+      width: 100%;
+      .cards {
+        width: 100%;
+
+        .card {
+          width: 45%;
+        }
+      }
+    }
+  }
+
+  .TOP-TRENDING {
+    width: 100%;
+
+    .card-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  footer {
+    width: 100%;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      .ACTIVE,
+      .QUICK,
+      .SUPPORTS,
+      .NEWSLETTER {
+        width: 45%;
+      }
+      /* .credi-bottom {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .left-COPYRIGHT,
+        .right-card {
+          width: 90%;
+        }
+      } */
+    }
+  }
+}
